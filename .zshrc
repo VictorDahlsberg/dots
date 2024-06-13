@@ -84,6 +84,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export PATH="$HOME/.local/bin:$PATH"
 eval "$(zoxide init zsh --cmd cd)"
+alias dotfiles='/usr/bin/git --git-dir="$HOME/.dotfiles/" --work-tree="$HOME"'
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
