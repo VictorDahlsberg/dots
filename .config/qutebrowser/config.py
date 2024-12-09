@@ -77,7 +77,8 @@ config.set('content.cookies.accept', 'all', 'devtools://*')
 # Value to send in the `Accept-Language` header. Note that the value
 # read from JavaScript is always the global value.
 # Type: String
-config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io/*')
+config.set('content.headers.accept_language',
+           '', 'https://matchmaker.krunker.io/*')
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -93,7 +94,8 @@ config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
+config.set('content.headers.user_agent',
+           'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
 
 # User agent to send.  The following placeholders are defined:  *
 # `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
@@ -109,7 +111,8 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{w
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:131.0) Gecko/20100101 Firefox/131.0', 'https://accounts.google.com/*')
+config.set('content.headers.user_agent',
+           'Mozilla/5.0 ({os_info}; rv:131.0) Gecko/20100101 Firefox/131.0', 'https://accounts.google.com/*')
 
 # Load images automatically in web pages.
 # Type: Bool
@@ -137,15 +140,21 @@ config.set('content.javascript.enabled', True, 'qute://*/*')
 
 # Allow locally loaded documents to access remote URLs.
 # Type: Bool
-config.set('content.local_content_can_access_remote_urls', True, 'file:///home/victor/.local/share/qutebrowser/userscripts/*')
+config.set('content.local_content_can_access_remote_urls', True,
+           'file:///home/victor/.local/share/qutebrowser/userscripts/*')
 
 # Allow locally loaded documents to access other local URLs.
 # Type: Bool
-config.set('content.local_content_can_access_file_urls', False, 'file:///home/victor/.local/share/qutebrowser/userscripts/*')
+config.set('content.local_content_can_access_file_urls', False,
+           'file:///home/victor/.local/share/qutebrowser/userscripts/*')
 
 config.set("tabs.position", "right")
 config.set("tabs.show", "switching")
 config.set("tabs.show_switching_delay", 800)
 config.set("colors.webpage.bg", "white")
 config.set("window.hide_decoration", True)
-config.bind("Q","tab-close")
+config.set("search.wrap", False)
+config.set("tabs.wrap", False)
+config.set("content.javascript.clipboard", "access")
+
+config.bind("Q", "tab-close")

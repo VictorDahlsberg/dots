@@ -10,6 +10,7 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"L3MON4D3/LuaSnip",
 		"Hoffs/omnisharp-extended-lsp.nvim",
+		"nvim-java/nvim-java",
 	},
 	init = function()
 		local cmp = require("cmp")
@@ -30,6 +31,7 @@ return {
 		lsp_zero.on_attach(function(_, bufnr)
 			lsp_zero.default_keymaps({ buffer = bufnr })
 		end)
+        require('java').setup()
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
 			ensure_installed = {},
@@ -39,6 +41,7 @@ return {
 				end,
 			},
 		})
+        require('lspconfig').jdtls.setup({})
 		require("lspconfig").omnisharp.setup({
 			handlers = {
 				["textDocument/definition"] = require("omnisharp_extended").definition_handler,
